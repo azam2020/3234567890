@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Report: High CPU Utilization with Virtual Machines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 10px;
+            min-height: 50px;
+            border-bottom: #ddd 3px solid;
+        }
+        header h1 {
+            text-align: center;
+            margin: 0;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        section {
+            padding: 20px;
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Issue Report: High CPU Utilization with Virtual Machines</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Issue Summary</h2>
+            <p><strong>HSD No.:</strong> 3234567890</p>
+            <p><strong>Title:</strong> Excessive CPU Utilization in Virtual Machines During Idle State</p>
+            <p><strong>Description:</strong> Virtual machines (VMs) are showing high CPU utilization even when in an idle state. This abnormal behavior causes performance degradation across all VMs hosted on the same hypervisor.</p>
+        </section>
+
+        <section>
+            <h2>Hardware Configuration</h2>
+            <ul>
+                <li><strong>Hardware Model:</strong> Lenovo ThinkSystem SR650</li>
+                <li><strong>CPU:</strong> Intel Xeon Gold 5218 (2x)</li>
+                <li><strong>Memory:</strong> 256 GB RAM</li>
+                <li><strong>Storage:</strong> 2x 960GB SSD, 2x 4TB HDD</li>
+                <li><strong>Network Adapter:</strong> Broadcom BCM57416 10G Ethernet</li>
+                <li><strong>Firmware Version:</strong> 4.8.0</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Software Configuration</h2>
+            <ul>
+                <li><strong>Operating System:</strong> VMware ESXi 7.0</li>
+                <li><strong>Kernel Version:</strong> 5.4.0-92-generic</li>
+                <li><strong>Virtualization Software:</strong> VMware vSphere 7.0</li>
+                <li><strong>Hypervisor Settings:</strong> Default</li>
+                <li><strong>VM OS:</strong> Ubuntu 20.04 LTS</li>
+                <li><strong>VM Tools Version:</strong> open-vm-tools 11.2.5</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Steps to Reproduce</h2>
+            <ol>
+                <li>Install VMware ESXi on the Lenovo ThinkSystem server.</li>
+                <li>Set up multiple virtual machines running Ubuntu 20.04 LTS.</li>
+                <li>Ensure the VMs are in idle state (no active processes).</li>
+                <li>Monitor the CPU utilization for each VM using the vSphere Performance tab or the command <code>esxtop</code>.</li>
+                <li>Observe the CPU usage even in the absence of active workloads.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Expected Result</h2>
+            <p>The CPU utilization should remain minimal during VM idle states, typically below 5%.</p>
+        </section>
+
+        <section>
+            <h2>Actual Result</h2>
+            <p>CPU utilization for the idle VMs ranges from 15% to 25%, which is unusually high for idle state.</p>
+        </section>
+
+        <section>
+            <h2>Attached Files</h2>
+            <ul>
+                <li><a href="files/vm-cpu-usage.txt" download>VM CPU Usage Log</a></li>
+                <li><a href="files/esxi-config.txt" download>ESXi Configuration</a></li>
+                <li><a href="files/system-logs.txt" download>System Logs</a></li>
+                <li><a href="files/reproduction-steps.txt" download>Steps to Reproduce</a></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
